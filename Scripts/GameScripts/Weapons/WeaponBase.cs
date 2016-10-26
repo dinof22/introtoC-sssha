@@ -1,7 +1,11 @@
 using System;
-public class WeaponBase {
+public class WeaponBase 
+{
 
-    public void Fire(){
+    public int power = 10;
+    public float range = 1;
+    public void Fire()
+    {
         Console.WriteLine("Fire");
     }
 
