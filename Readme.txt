@@ -21,3 +21,14 @@ conventions and syntax
 Syntax means the structure in which a coding language is typed and conventions are things that you need to know in order to write effective code. One convention is the dot (.) operator. The dot operator is used to drill down deeper into a compound segment of code. Lets say America.usa is what you use to get to the usa when you’ve written code about America. You could drill down deeper by saying America.USA.Utah.Orem if you have coded America have that many sub categories. Another convention is the semicolon ; is used to terminate statements. Another thing you need to do is properly indent your code in order to make it easy to read (even though it is not technically required.  Generally you should indent after curly braces. You can also use comments with // to leave yourself notes. Or also disable code temporarily if you put it between /* and */.
 
 
+Data types
+
+All variables have what is called a data type. The 2 primary data types are value types and reference types. Variables that are value types include integers, floats, doubles, Booleans, characters, and Structs (which are value types that contain one or more other variables). Reference types are just classes. Any variable that is an object of a class is a reference type. 
+The difference between value types and reference types is that value types actually contain some value, where reference types only contain a memory address that points to where a value is stored. Because of this, if a value type is changed, only that value is affected. Also if you copy that value type. You can change it without effecting the original. With a reference type, you could copy it multiple times, but if the value that reference changes, then all the copies change.
+
+
+variables and functions
+
+Variable can be thought of like boxes that contain something. Different types of variables contain different types of information, such as numbers, strings, and other things, like how there are cardboard boxes holding new toys, and led boxes to store nuclear waste! In C3 you need to declare the type of variable and the beginning with keywords like int, string, etc.; then you name it and assign it a value. 
+functions are like machines that can perform certain tasks. Functions can do all sorts of things depending on what you code them to do. They can perform multiplication and other kinds of manipulation on variables and then RETURN something, like the sum, and then Logging that info to a screen. Functions can also be programmed to NOT return anything. Just perform a task silently.
+
