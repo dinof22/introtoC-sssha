@@ -28,7 +28,28 @@ public class Game {
         Console.WriteLine("Game Over");
     }
 
+    public string gameState;
+
     private void Play (){
+        Console.WriteLine("Play commands: play, end, help");
+        Console.WriteLine("Next?");
+        gameState = Console.ReadLine();
+
+        if(gameState == "end") {
+            Console.WriteLine("Game Over");
+            Environment.Exit(0);
+        }
+
+        if(gameState == "help") {
+            Console.WriteLine("waht do you need help with?? if you cant play this game you have issues...");
+            Play();
+        }
+
+        if(gameState != "help" && gameState != "play" && gameState != "end") {
+            Console.WriteLine(gameState + " is not a valid option");
+            Play();
+        }
+
         Random randomNum = new Random();
         Cave.Encounter(randomNum.Next(0, Cave.objects.Length), "walked");
     }

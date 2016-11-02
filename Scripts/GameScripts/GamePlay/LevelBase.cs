@@ -21,15 +21,15 @@ public class LevelBase {
             switch (i)
             {
                 case 0:
-                    Console.WriteLine("You've" + traveled + "into " + objects[i]);
+                    Console.WriteLine("You've " + traveled + " into " + objects[i]);
                 break;
 
                 case 1:
-                    Console.WriteLine("You've" + traveled + "into " + objects[i]);
+                    Console.WriteLine("You've " + traveled + " into " + objects[i]);
                 break;
     
                 case 2:
-                    Console.WriteLine("You've" + traveled + "into " + objects[i]);
+                    Console.WriteLine("You've " + traveled + " into " + objects[i]);
                     Game.GameTimer();
                     Random randomNum = new Random();
                     Game.UnderWater.Encounter(randomNum.Next(0, Game.UnderWater.objects.Length), "swam");
@@ -37,7 +37,7 @@ public class LevelBase {
 
                 case 3:
                 //Lava Kills us and ends the game
-                    Console.WriteLine("You've" + traveled + "into " + objects[i]);
+                    Console.WriteLine("You've " + traveled + " into " + objects[i]);
                     Game.canPlay = false;
                 break;
 
