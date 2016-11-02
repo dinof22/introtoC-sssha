@@ -32,3 +32,12 @@ variables and functions
 Variable can be thought of like boxes that contain something. Different types of variables contain different types of information, such as numbers, strings, and other things, like how there are cardboard boxes holding new toys, and led boxes to store nuclear waste! In C3 you need to declare the type of variable and the beginning with keywords like int, string, etc.; then you name it and assign it a value. 
 functions are like machines that can perform certain tasks. Functions can do all sorts of things depending on what you code them to do. They can perform multiplication and other kinds of manipulation on variables and then RETURN something, like the sum, and then Logging that info to a screen. Functions can also be programmed to NOT return anything. Just perform a task silently.
 
+if statements
+
+Is statements are used when you only want code to execute based on a certain condition. For example if you only want to drink coffee when its temperature is within a desired range. A basic if statement is laid out like this.
+If( coffeeTemp < 90 ) { 
+    Console.WriteLine(“you drank the coffee”);
+} else {
+    Console.WriteLine("the coffee is too hot")
+}
+You can also use else clauses and if-else clauses to further specify what happens under certain circumstances. An else statement can be used as a default outcome if an if statement is not met. And an “if else” statement can be used to test for a second condition (possibly before it defaults to the else clause if you have written one.
