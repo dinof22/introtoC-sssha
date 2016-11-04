@@ -41,3 +41,14 @@ If( coffeeTemp < 90 ) {
     Console.WriteLine("the coffee is too hot")
 }
 You can also use else clauses and if-else clauses to further specify what happens under certain circumstances. An else statement can be used as a default outcome if an if statement is not met. And an “if else” statement can be used to test for a second condition (possibly before it defaults to the else clause if you have written one.
+
+
+Arrays
+Arrays are used to store multiple variables of the same type together. Arrays are a much more effective way of writing code than declaring every single variable individually. 
+In C# an array is formatted like this:
+  The type of array >>>> Int[] nameOfArray = new type[6]; (6 is the number of elements in the array.)
+you can access elements of an array by using the name of the array followed by [] containing the index of the element (For example nameOfArray[0]). Also, The number of the first element in an array is always 0. You can give a value to an array element by doing this:
+nameOfArray[2] = 44;
+you can also initialize the value of an element in the same line you create the array:
+int[] nameOfArray = {6, 23, 44, 505, 2, 33};
+arrays are great for using in loops.
