@@ -10,6 +10,8 @@ public class LevelBase {
         Console.WriteLine("Hey Anthony");
     }
 
+    public WeaponBase M16 = new WeaponBase();
+
     public string StartMessage;
     public bool entranceOpen = true;
     public string[] environment = {"Cold", "Wet", "Dark" };  
@@ -36,8 +38,11 @@ public class LevelBase {
                 break;
 
                 case 3:
-                //Lava Kills us and ends the game
+                //Danger Kills us and ends the game
                     Console.WriteLine("You've " + traveled + " into " + objects[i]);
+                    if(objects[i] == "Shark") {
+                        M16.SemiAutoFire();
+                    }
                     Game.canPlay = false;
                 break;
 
