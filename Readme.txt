@@ -52,3 +52,20 @@ nameOfArray[2] = 44;
 you can also initialize the value of an element in the same line you create the array:
 int[] nameOfArray = {6, 23, 44, 505, 2, 33};
 arrays are great for using in loops.
+
+Loops
+
+Loops in programing are ways to repeat lines of code. In loops, each repitition of a line of code is called an iteration. There are multiple kinds of loops in code, such as while loops, do-while loops, for loops, and for-each loops. A typical while loop in C# is structured like this:
+int bullets = 5;
+while(bullets  > 5){
+    Console.WriteLine(“FIRE!!”);
+    Bullets- -   //with no space
+}
+do-while loops are similar to while loops exept for they must always execute their code at least once.
+For loops are similar only they use a different syntax. 
+int enemies = 3;
+for(int i = 0; I < enemies; i++) {
+    Console.WriteLine(“killing enemy “ + i)
+}
+Loops are great for using with arrays.
+ 
