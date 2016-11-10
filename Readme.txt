@@ -69,3 +69,12 @@ for(int i = 0; I < enemies; i++) {
 }
 Loops are great for using with arrays.
  
+Enumerations
+
+Enumerations are a special data type (like an int, float, Boolean) that has a specific subset of possible values. These values can have their own names.  Sometimes you want a variable that is one of a set of constants. Imagine if you wanted code for specific things like north, east, south, and west like the points of a compass. You could assign them an integer of 0,1,2,3. But that might be hard to remember all the time. This is when it would be a great idea to use enumerations (or enums), because you could pretty much set north or south to be its own thing.
+This is the syntax for enums in C#:
+
+enum MyEnum {Me, You, Dog, Door};
+
+MyDog = MyEnum.Dog
+
