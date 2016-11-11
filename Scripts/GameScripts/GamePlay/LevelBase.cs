@@ -38,12 +38,12 @@ public class LevelBase {
                 break;
 
                 case 3:
-                //Danger Kills us and ends the game
+                // Kills us and ends the game
                     Console.WriteLine("You've " + traveled + " into " + objects[i]);
                     if(objects[i] == "Shark") {
                         M16.SemiAutoFire();
                     }
-                    Game.canPlay = false;
+                    GameStateMachine.currentGameState = GameStateMachine.GameStates.Died;
                 break;
 
                 default:

@@ -1,59 +1,86 @@
 using System;
-public class Game {
+public class Game
+{
 
     public static Action StartGame;
 
     public static bool canPlay = true;
 
-    public Game () {
+    public Game()
+    {
         Health.power = 100;
         Health.message = "You are getting stronger.";
         Ammo.message = "You have more ammo";
         Cave.StartMessage = "You have entered a cave.";
-        UnderWater.objects = new string[] {"SeaWead", "Coral", "Fish", "Shark"};
+        UnderWater.objects = new string[] { "SeaWead", "Coral", "Fish", "Shark" };
     }
 
     //Runs at the start of the game
-    public void Start (){
-        StartGame();
-        Console.WriteLine("Please type in your name:");
-        name = Console.ReadLine();
-        Console.WriteLine("Your Player Name is " + name);
-        Cave.Enter();        
-        while(Game.canPlay) {
-            GameTimer();
-            Play();
-        }
-        Console.WriteLine("You Died");
-        Console.WriteLine("Game Over");
+    public void Start()
+    {
+
     }
 
 
+    private String gameState = "Start";
+    private GameStateMachine.GameStates toEnum;
 
-    private void Play (){
-        Console.WriteLine("Play commands: Play, End, Help");
+    public void Play()
+    {
+        
 
-        switch (GameStateMachine.currentGameState)
+
+        switch (toEnum)
         {
+            case GameStateMachine.GameStates.Start:
+
+                Console.WriteLine("Please type in your name:");
+                name = Console.ReadLine();
+                Console.WriteLine("Your Player Name is " + name);
+
+                Console.WriteLine("Play commands: Play, End, Help");
+
+                gameState = Console.ReadLine();
+
+                if(Enum.TryParse(gameState, out toEnum))
+                    Play();
+
+
+                break;
+
+            case GameStateMachine.GameStates.Died:
+                Console.WriteLine("You Died");
+                GameStateMachine.currentGameState = GameStateMachine.GameStates.End;
+                Play();
+                break;
             case GameStateMachine.GameStates.End:
                 Console.WriteLine("Game Over");
                 Environment.Exit(0);
-            break;
+                break;
 
             case GameStateMachine.GameStates.Help:
                 Console.WriteLine("waht do you need help with?? if you cant play this game you have issues...");
                 Play();
-            break;
+                break;
 
             case GameStateMachine.GameStates.Play:
+                while (Game.canPlay)
+                {
+                    Cave.Enter();
+                    Random randomNum = new Random();
+                    Cave.Encounter(randomNum.Next(0, Cave.objects.Length), "walked");
+                    GameTimer();
+                    Play();
+                }
 
-            break;
+                Play();
+                break;
 
             default:
                 Console.WriteLine(" is not a valid option");
                 Play();
 
-            break;
+                break;
         }
 
 
@@ -76,12 +103,12 @@ public class Game {
         //     Play();
         // }
 
-        Random randomNum = new Random();
-        Cave.Encounter(randomNum.Next(0, Cave.objects.Length), "walked");
+        
     }
 
-    public static void GameTimer () {
-         System.Threading.Thread.Sleep(2000);
+    public static void GameTimer()
+    {
+        System.Threading.Thread.Sleep(2000);
     }
 
     //Game Levels
@@ -90,7 +117,7 @@ public class Game {
     //Game PowerUps
     public PowerUpBase Health = new PowerUpBase();
     public PowerUpBase Ammo = new PowerUpBase();
-    
+
     //Game Weapons
     private WeaponBase Gun = new WeaponBase();
     private WeaponBase Rifle = new WeaponBase();
