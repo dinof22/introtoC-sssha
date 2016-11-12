@@ -78,3 +78,20 @@ enum MyEnum {Me, You, Dog, Door};
 
 MyDog = MyEnum.Dog
 
+Switch statements
+
+Switch statements are conditional statements like if statements, but switch statements are used when you want to compare a single variable with a series of constants. Rather than using multiple if statements. Here is an example of how to write switch statements in C#:
+public int jetMachSpeed = 2;
+	switch (jetMachSpeed)
+	{ 
+	case 2:
+		Console.WriteLine(“super fast!”);
+		break;
+	case 1:
+		Console.WriteLine(“fast”);
+		break;
+	default;
+		Console.WriteLine(“unknown mach speed”);
+		Break;	
+}
+The default case is used to catch everything that doesn’t have a case of its own. And therefore it doesn’t need a value in order to work. It is similar to an else clause in an if else statement.
